@@ -11,7 +11,6 @@ import { ResizingControl, ResizeHandle } from './table-header-cell/resizing-cont
 
 const StyledHeaderCell = styled(TableCell)`
     outline: none;
-    position: relative;
     overflow: visible;
     &:nth-last-child(2) ${ResizeHandle} {
       width: ${props => props.theme.global.edgeSize.xxsmall};
@@ -42,9 +41,6 @@ const StyledHeaderCell = styled(TableCell)`
         pointer-events: none;
         z-index: 400;
       },
-    `}
-    ${props => props.noWrap && `
-      white-space: nowrap;
     `}
 `;
 

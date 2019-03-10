@@ -1,0 +1,85 @@
+{
+  "name": "dx-react-grid-grommet",
+  "version": "0.9.05",
+  "main": "index.js",
+  "module": "es6/index.js",
+  "jsnext:main": "es6/index.js",
+  "description": "react grommet v2 theme for developer express dx-grid react",
+  "sideEffects": false,
+  "authors": [
+    "Atanas Stoyanov"
+  ],
+  "keywords": [
+    "grommet",
+    "react",
+    "react",
+    "devextreme-reactive",
+    "dx-react-grid"
+  ],
+  "homepage": "https://grommet-nextjs.herokuapp.com/dx-grid",
+  "bugs": "https://github.com/atanasster/grommet-controls/issues",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atanasster/dx-react-grid-grommet.git"
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": ">= 6.11.5"
+  },
+  "scripts": {
+    "build": "webpack --mode production && babel ./src/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es6 babel ./src/ --ignore '__tests__' --out-dir ./dist/es6",
+    "check": "./node_modules/.bin/eslint .",
+    "pub": "pushd ./ && npm run build && cd dist && npm publish && popd"
+  },
+  "peerDependencies": {
+    "@devexpress/dx-react-core": ">= 1.10.3",
+    "@devexpress/dx-react-grid": ">= 1.10.3",
+    "grommet": ">= 2.2.1",
+    "grommet-icons": ">= 4.1.0",
+    "react": ">= 16.7.0",
+    "react-dom": ">= 16.7.0",
+    "styled-components": ">= 4.1.3"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "devDependencies": {
+    "@devexpress/dx-react-core": "^1.10.3",
+    "@devexpress/dx-react-grid": "^1.10.3",
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-styled-components": "^1.6.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.16.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.1",
+    "css": "^2.2.1",
+    "del": "^3.0.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-class-property": "^1.0.6",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "fs-extra": "^4.0.0",
+    "grommet": "^2.2.1",
+    "grommet-icons": "^4.1.0",
+    "pre-commit": "^1.2.2",
+    "react": "^16.7.0",
+    "react-dev-utils": "^7.0.0",
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3",
+    "tarball-extract": "^0.0.6",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.7"
+  },
+  "pre-commit": [
+    "check"
+  ]
+}

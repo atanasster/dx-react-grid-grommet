@@ -4,7 +4,7 @@ Visit the [Developer Express](https://devexpress.github.io/devextreme-reactive/r
 
 ### Install
 
-  To install Grommet Controls:
+  To install:
 
   ```
     $ npm install dx-react-grid-grommet

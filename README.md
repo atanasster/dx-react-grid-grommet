@@ -1,6 +1,6 @@
-# react grommet v2 theme for developer express dx-grid react
+# react grommet v2 theme for DevExpress dx-react-grid
 
-Visit the [Developer Express](https://devexpress.github.io/devextreme-reactive/react/grid/) website for more information and examplest.
+Visit the [Developer Express](https://devexpress.github.io/devextreme-reactive/react/grid/) website for more information and examples.
 
 ### Install
 

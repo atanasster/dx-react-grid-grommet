@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { deepMerge, normalizeColor } from 'grommet/utils';
+import { deepMerge } from 'grommet/utils';
 import { genericStyles } from 'grommet/utils/styles';
 import { defaultTheme } from './dx-theme';
 
@@ -12,7 +12,6 @@ const StyledTable = styled.table`
     position: sticky;
     z-index: 500;
     overflow: visible;
-    background: ${normalizeColor('background', props.theme)};
     fallbacks: {
       position: -webkit-sticky;
     }

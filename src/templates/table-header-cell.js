@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { DragSource } from '@devexpress/dx-react-core';
 import { Box } from 'grommet';
-import { normalizeColor } from 'grommet/utils';
 import { TableCell } from '../grommet/TableCell';
 
 
@@ -27,21 +26,7 @@ const StyledHeaderCell = styled(TableCell)`
     `}
     ${props => props.cellAlign === 'center' && `
       text-align: center;
-    `}
-    ${props => props.dimmed && `
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: ${normalizeColor('background', props.theme)};
-        opacity: 0.7;
-        pointer-events: none;
-        z-index: 400;
-      },
-    `}
+    `}    
 `;
 
 class TableHeaderCellBase extends React.PureComponent {

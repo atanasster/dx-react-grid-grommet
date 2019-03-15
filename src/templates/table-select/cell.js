@@ -5,7 +5,6 @@ import { CheckBox } from 'grommet';
 import { TableCell } from '../../grommet/TableCell';
 
 export const StyledSelectCell = styled(TableCell)`
-  overflow: visible;
   text-align: center;
 `;
 

@@ -3,6 +3,7 @@ import { normalizeColor } from 'grommet/utils';
 
 export const defaultTheme = {
   dxgrid: {
+    'extend': undefined,
     'cell': {
       extend: css`
 padding: ${props => props.theme.global.edgeSize.xsmall};

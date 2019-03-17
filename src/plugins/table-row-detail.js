@@ -17,7 +17,7 @@ limitations under the License.
 import React from 'react';
 import { withComponents } from '@devexpress/dx-react-core';
 import { TableRowDetail as TableRowDetailBase } from '@devexpress/dx-react-grid';
-import { TableDetailToggleCell as ToggleCell } from '../templates/table-detail-toggle-cell';
+import { ToggleCell } from '../templates/table-detail/toggle-cell';
 import { TableDetailCell as Cell } from '../templates/table-detail/cell';
 import { TableDetailRow as Row } from '../templates/table-detail/row';
 

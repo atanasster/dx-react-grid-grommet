@@ -19,12 +19,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button } from 'grommet';
 import { FormDown, FormUp } from 'grommet-icons';
-import { TableCell } from '../grommet/TableCell';
+import { TableCell } from '../../grommet/TableCell';
 
 const StyledButton = styled(Button)`
   display: contents;
 `;
-const TableDetailToggleCellBase = ({
+export const ToggleCell = ({
   style, expanded, onToggle,
   tableColumn, tableRow, row,
   ...restProps
@@ -48,7 +48,7 @@ const TableDetailToggleCellBase = ({
   );
 };
 
-TableDetailToggleCellBase.propTypes = {
+ToggleCell.propTypes = {
   style: PropTypes.object,
   expanded: PropTypes.bool,
   onToggle: PropTypes.func,
@@ -57,7 +57,7 @@ TableDetailToggleCellBase.propTypes = {
   row: PropTypes.any,
 };
 
-TableDetailToggleCellBase.defaultProps = {
+ToggleCell.defaultProps = {
   style: null,
   expanded: false,
   onToggle: () => {},
@@ -66,4 +66,3 @@ TableDetailToggleCellBase.defaultProps = {
   row: undefined,
 };
 
-export const TableDetailToggleCell = TableDetailToggleCellBase;

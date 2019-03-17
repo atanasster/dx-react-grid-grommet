@@ -16,14 +16,16 @@ limitations under the License.
 
 import React from 'react';
 import styled, { ThemeContext } from 'styled-components';
-import { deepMerge } from 'grommet/utils';
+import { deepMerge, normalizeColor } from 'grommet/utils';
 import { genericStyles } from 'grommet/utils/styles';
 import { defaultTheme } from './dx-theme';
 
 const StyledTable = styled.table`
   width: 100%;
   border-spacing: 0;
-  border-collapse: collapse;
+  table-layout: fixed;
+  border-collapse: separate;
+  
   ${props => props.sticky && `
     position: sticky;
     z-index: 500;
@@ -31,6 +33,7 @@ const StyledTable = styled.table`
     fallbacks: {
       position: -webkit-sticky;
     }
+    background-color: ${normalizeColor('background', props.theme)}
   `}
   ${props => (props.use === 'head') && `
     top: 0;

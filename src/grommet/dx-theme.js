@@ -22,21 +22,60 @@ export const defaultTheme = {
     'extend': undefined,
     'cell': {
       extend: css`
-padding: ${props => props.theme.global.edgeSize.xsmall};
+      padding: ${props => props.theme.global.edgeSize.small} ${props => props.theme.global.edgeSize.xsmall};
+      border-bottom: ${props => props.theme.global.control.border.width} solid ${props => normalizeColor('border', props.theme)};
       `,
     },
     'cell-banded-header': {
       extend: css`
       border-bottom: ${props => props.theme.global.control.border.width} solid ${props => normalizeColor('border', props.theme)};
-      padding: ${props => props.theme.global.edgeSize.xsmall};
+      padding: ${props => props.theme.global.edgeSize.small} ${props => props.theme.global.edgeSize.xsmall};
       `,
     },
+
     'cell-detail': undefined,
-    'cell-edit': undefined,
+    'cell-edit': {
+      extend: css`
+      padding: 5px 0;
+      `,
+    },
+    'cell-edit-commands': {
+      extend: css`
+      text-transform: uppercase;
+      padding: ${props => props.theme.global.edgeSize.small} ${props => props.theme.global.edgeSize.xsmall};
+      border-bottom: ${props => props.theme.global.control.border.width} solid ${props => normalizeColor('border', props.theme)};
+      `,
+    },
     'cell-filter': 'cell',
-    'cell-header': 'cell',
+    'cell-fixed': {
+      extend: css`
+      ${props => `
+      background-color: ${normalizeColor(props.theme.dark ? 'dark-1' : 'light-1', props.theme)};
+      color: ${normalizeColor(props.theme.dark ? 'light-1' : 'dark-1', props.theme)};
+      border-left: ${props.theme.global.control.border.width} solid ${normalizeColor('border', props.theme)};
+      border-right: ${props.theme.global.control.border.width} solid ${normalizeColor('border', props.theme)};
+      `}
+      `,
+    },
+    'cell-header': {
+      extend: css`
+      padding: ${props => props.theme.global.edgeSize.small} ${props => props.theme.global.edgeSize.xsmall};
+      border-bottom: ${props => props.theme.global.control.border.width} solid ${props => normalizeColor('border', props.theme)};
+      `,
+    },
+    'cell-header-edit-commands': {
+      extend: css`
+      text-transform: uppercase;
+      padding: ${props => props.theme.global.edgeSize.small} ${props => props.theme.global.edgeSize.xsmall};
+      border-bottom: ${props => props.theme.global.control.border.width} solid ${props => normalizeColor('border', props.theme)};
+      `,
+    },
     'cell-nodata': 'cell',
-    'cell-stub': undefined,
+    'cell-stub': {
+      extend: css`
+ border-bottom: ${props => props.theme.global.control.border.width} solid ${props => normalizeColor('border', props.theme)};
+      `,
+    },
     'cell-toggle': 'cell',
     'cell-select': 'cell',
     'cell-select-all': 'cell',

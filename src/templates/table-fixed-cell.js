@@ -17,16 +17,12 @@ limitations under the License.
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
-import { normalizeColor } from 'grommet/utils';
 
 const CellPlaceholder = styled.div`
   position: sticky;
   z-index: 19;
-  ${props => `
-      background-color: ${normalizeColor(props.theme.dark ? 'dark-1' : 'light-1', props.theme)};
-      color: ${normalizeColor(props.theme.dark ? 'light-1' : 'dark-1', props.theme)};
-    `}
   background-clip: padding-box;
+  ${props => props.theme.dxgrid && props.theme.dxgrid['cell-fixed'] && props.theme.dxgrid['cell-fixed'].extend}
 `;
 
 const FixedCellBase = withTheme(({

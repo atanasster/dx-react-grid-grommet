@@ -31,6 +31,7 @@ export const EditCell = ({
   >
     {children || (
     <TextInput
+      plain={true}
       focusIndicator={true}
       value={value || ''}
       disabled={!editingEnabled}

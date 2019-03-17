@@ -38,8 +38,6 @@ export const TableSummaryCell = ({
     {...restProps}
   >
     <Box
-      gap='small'
-      fill={true}
       align={tableColumn && ALIGN_MAP[tableColumn.align]}
     >
       {children}

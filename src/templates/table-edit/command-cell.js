@@ -16,7 +16,7 @@ limitations under the License.
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Button } from 'grommet';
+import { Box, Anchor } from 'grommet';
 import { TableCell } from '../../grommet/TableCell';
 
 export const CommandButton = ({
@@ -24,8 +24,8 @@ export const CommandButton = ({
   text,
   ...restProps
 }) => (
-  <Button
-    primary={true}
+  <Anchor
+    href='#'
     label={text}
     onClick={(e) => {
       e.stopPropagation();
@@ -48,6 +48,7 @@ export const EditCommandHeadingCell = ({
   ...restProps
 }) => (
   <TableCell
+    tableContext='cell-header-edit-commands'
     align='center'
     noWrap={true}
     rowSpan={rowSpan}
@@ -76,9 +77,10 @@ export const EditCommandCell = ({
   tableRow, tableColumn, row, children, ...restProps
 }) => (
   <TableCell
+    tableContext='cell-edit-commands'
     {...restProps}
   >
-    <Box direction='row' gap='small'>
+    <Box direction='row' gap='small' flex='grow'>
       {children}
     </Box>
   </TableCell>

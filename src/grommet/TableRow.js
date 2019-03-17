@@ -19,6 +19,7 @@ import PropTypes from 'prop-types';
 import styled, { withTheme } from 'styled-components';
 
 const StyledTableRow = styled.tr`
+  vertical-align: middle;
   ${props => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 

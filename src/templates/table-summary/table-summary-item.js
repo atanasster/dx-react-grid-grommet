@@ -26,8 +26,8 @@ const TableSummaryItemBase = ({
   ...restProps
 }) => (
   <Text
+    margin={{ vertical: 'xsmall' }}
     {...restProps}
-    weight='bold'
   >
     {getMessage(type)}
     :&nbsp;

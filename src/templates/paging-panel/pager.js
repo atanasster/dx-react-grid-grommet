@@ -35,6 +35,7 @@ export const Pager = ({
     pad='xsmall'
     gap='medium'
     direction='row-responsive'
+    justify='end'
   >
     {!!pageSizes.length && (
     <PageSizeSelector

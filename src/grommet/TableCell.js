@@ -22,8 +22,6 @@ const StyledTableCell = styled.td`
   font-weight: inherit;
   text-align: inherit;
   height: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
   ${props => props.verticalAlign && `vertical-align: ${props.verticalAlign};`}
   ${props => (props.align === 'right') && 'text-align: right;'}
   ${props => (props.align === 'center') && 'text-align: center;'}

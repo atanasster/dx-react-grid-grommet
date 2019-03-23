@@ -80,7 +80,7 @@ export const EditCommandCell = ({
     tableContext='cell-edit-commands'
     {...restProps}
   >
-    <Box direction='row' gap='small' flex='grow'>
+    <Box direction='row' gap='small' flex='grow' justify='center'>
       {children}
     </Box>
   </TableCell>

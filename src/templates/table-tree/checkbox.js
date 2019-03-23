@@ -25,6 +25,7 @@ export const TableTreeCheckbox = ({
     checked={checked}
     indeterminate={indeterminate}
     disabled={disabled}
+    onChange={() => {}}
     onClick={(e) => {
       if (disabled) return;
       e.stopPropagation();

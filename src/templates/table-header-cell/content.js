@@ -18,7 +18,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from 'grommet';
 
-const ContentBase = ({
+export const Content = ({
   column, align, children, ...restProps
 }) => (
   <Box
@@ -31,7 +31,7 @@ const ContentBase = ({
   </Box>
 );
 
-ContentBase.propTypes = {
+Content.propTypes = {
   column: PropTypes.object,
   align: PropTypes.string,
   children: PropTypes.oneOfType([
@@ -40,10 +40,8 @@ ContentBase.propTypes = {
   ]),
 };
 
-ContentBase.defaultProps = {
+Content.defaultProps = {
   column: undefined,
   align: 'left',
   children: undefined,
 };
-
-export const Content = ContentBase;

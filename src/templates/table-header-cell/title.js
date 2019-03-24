@@ -19,11 +19,11 @@ import PropTypes from 'prop-types';
 import { Text } from 'grommet';
 
 const TitelBase = ({
-  children, ...restProps
+  children, ...rest
 }) => (
   <Text
-    truncate={true}
-    {...restProps}
+    truncate={rest.noWrap}
+    {...rest}
   >
     {children}
   </Text>

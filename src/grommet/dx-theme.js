@@ -36,7 +36,7 @@ export const defaultTheme = {
     'cell-detail': undefined,
     'cell-edit': {
       extend: css`
-      padding: 5px 0;
+      padding: 2px 0;
       border-bottom: ${props => props.theme.global.control.border.width} solid ${props => normalizeColor('border', props.theme)};
       `,
     },

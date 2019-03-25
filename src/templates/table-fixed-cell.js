@@ -36,6 +36,7 @@ const FixedCellBase = withTheme(({
   ...restProps
 }) => (
   <CellPlaceholder
+    sticky={true}
     as={component}
     divLeft={showLeftDivider}
     divRight={showRightDivider}

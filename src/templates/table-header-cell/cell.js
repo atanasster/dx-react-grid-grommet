@@ -25,7 +25,9 @@ import { ResizingControl, ResizeHandle } from './resizing-control';
 const StyledHeaderCell = styled(TableCell)`
     outline: none;
     overflow: visible;
-    position: relative;
+    ${props => !props.sticky && `
+      position: relative;
+    `}  
     &:hover ${ResizeHandle} {
       opacity: 1;
     } 

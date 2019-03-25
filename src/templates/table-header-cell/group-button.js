@@ -16,43 +16,30 @@ limitations under the License.
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { withTheme } from 'styled-components';
-import { List } from 'grommet-icons';
+import { Button } from 'grommet';
+import { UnorderedList } from 'grommet-icons';
 
-const StyledGroupButton = styled.div`
-  padding-left: 0;
-  height: ${props => props.theme.spacing.unit * 3};
-  cursor: pointer;
-  ${props => props.isDisabled && `
-    cursor: default;
-    opacity: 0.3;
-  `}
-`;
 
-const GroupButtonBase = ({
-  disabled, onGroup, theme, ...restProps
+export const GroupButton = ({
+  onGroup, ...rest
 }) => (
-  <StyledGroupButton
+  <Button
     onClick={(e) => {
-      if (disabled) return;
+      if (rest.disabled) return;
       e.stopPropagation();
       onGroup(e);
     }}
-    theme={theme}
-    isDisabled={disabled}
-    {...restProps}
-  >
-    <List />
-  </StyledGroupButton>
+    icon={<UnorderedList />}
+    {...rest}
+  />
 );
 
-GroupButtonBase.propTypes = {
+GroupButton.propTypes = {
   onGroup: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
 };
 
-GroupButtonBase.defaultProps = {
+GroupButton.defaultProps = {
   disabled: false,
 };
 
-export const GroupButton = withTheme(GroupButtonBase);

@@ -91,7 +91,7 @@ class TableHeaderCellBase extends React.PureComponent {
         noWrap={!(tableColumn && tableColumn.wordWrapEnabled)}
         {...restProps}
       >
-        <Box direction='row'>
+        <Box direction='row' align='center' gap='small'>
           {children}
         </Box>
         {resizingEnabled && (

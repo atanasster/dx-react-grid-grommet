@@ -30,9 +30,6 @@ const StyledTable = styled.table`
     position: sticky;
     z-index: 500;
     overflow: visible;
-    fallbacks: {
-      position: -webkit-sticky;
-    }
     background-color: ${normalizeColor('background', props.theme)}
   `}
   ${props => (props.use === 'head') && `

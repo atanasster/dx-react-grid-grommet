@@ -37,16 +37,13 @@ export const ResizeHandle = styled.div`
       height: calc(100% - 4px);
       top: 2px;
     `}
-  &:hover {
-    opacity: 1;
-  }
 `;
 
 const ResizeHandleLine = styled.div`
   position: absolute;
   background-color: ${props => normalizeColor('text', props.theme)};
   height: 50%;
-  width: 1px;
+  width: 2px;
   top: 25%;
   transition: all linear 100ms;
   ${props => props.first && `

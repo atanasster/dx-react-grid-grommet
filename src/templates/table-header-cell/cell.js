@@ -19,14 +19,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { DragSource } from '@devexpress/dx-react-core';
 import { Box } from 'grommet';
-import { TableCell } from '../grommet/TableCell';
-
-
-import { ResizingControl, ResizeHandle } from './table-header-cell/resizing-control';
+import { TableCell } from '../../grommet/TableCell';
+import { ResizingControl, ResizeHandle } from './resizing-control';
 
 const StyledHeaderCell = styled(TableCell)`
     outline: none;
     overflow: visible;
+    &:hover ${ResizeHandle} {
+      opacity: 1;
+    } 
     &:nth-last-child(2) ${ResizeHandle} {
       width: ${props => props.theme.global.edgeSize.xxsmall};
       right: 1px;
@@ -45,7 +46,7 @@ const StyledHeaderCell = styled(TableCell)`
     `}
 `;
 
-class TableHeaderCellBase extends React.PureComponent {
+export class TableHeaderCell extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -117,7 +118,7 @@ class TableHeaderCellBase extends React.PureComponent {
   }
 }
 
-TableHeaderCellBase.propTypes = {
+TableHeaderCell.propTypes = {
   tableColumn: PropTypes.object,
   tableRow: PropTypes.object,
   column: PropTypes.object,
@@ -138,7 +139,7 @@ TableHeaderCellBase.propTypes = {
   before: PropTypes.node,
 };
 
-TableHeaderCellBase.defaultProps = {
+TableHeaderCell.defaultProps = {
   column: undefined,
   tableColumn: undefined,
   tableRow: undefined,
@@ -159,4 +160,3 @@ TableHeaderCellBase.defaultProps = {
   before: undefined,
 };
 
-export const TableHeaderCell = TableHeaderCellBase;

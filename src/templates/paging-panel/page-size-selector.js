@@ -33,8 +33,8 @@ const PageSizeSelectorBase = ({
       </Text>
       <Box width='xsmall'>
         <Select
-          value={String(pageSize)}
-          onChange={event => onPageSizeChange(event.value)}
+          value={pageSize !== 0 ? String(pageSize) : 'All'}
+          onChange={event => onPageSizeChange(pageSizes[event.selected])}
           options={pageSizes.map(item => (item !== 0 ? String(item) : showAll))}
         />
       </Box>

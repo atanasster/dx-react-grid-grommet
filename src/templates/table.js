@@ -20,10 +20,9 @@ import { Table as GrommetTable } from '../grommet/Table';
 
 
 export const Table = ({
-  tableRef, use, theme, ...rest
+  use, theme, ...rest
 }) => (
   <GrommetTable
-    ref={tableRef}
     sticky={!!use}
     use={use}
     {...rest}

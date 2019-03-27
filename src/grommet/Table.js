@@ -25,7 +25,7 @@ const StyledTable = styled.table`
   border-spacing: 0;
   table-layout: fixed;
   border-collapse: separate;
-  
+
   ${props => props.sticky && `
     position: sticky;
     z-index: 500;
@@ -45,13 +45,19 @@ const StyledTable = styled.table`
 
 class TableClass extends React.Component {
   render() {
+    const { tableRef, ...rest } = this.props;
+
     return (
       <ThemeContext.Consumer>
         {(theme) => {
           const extTheme = deepMerge(defaultTheme, theme);
           return (
             <ThemeContext.Provider value={extTheme}>
-              <StyledTable theme={extTheme} {...this.props} />
+              <StyledTable
+                ref={tableRef}
+                theme={extTheme}
+                {...rest}
+              />
             </ThemeContext.Provider>
           );
         }}

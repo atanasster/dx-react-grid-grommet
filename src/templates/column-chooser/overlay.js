@@ -20,7 +20,6 @@ import styled from 'styled-components';
 import { Drop } from 'grommet';
 
 const StyledDrop = styled(Drop)`
-  ${props => console.log(props.theme)}
   ${props => props.theme.dxgrid && props.theme.dxgrid['column-chooser'] && props.theme.dxgrid['column-chooser'].extend};
 `;
 

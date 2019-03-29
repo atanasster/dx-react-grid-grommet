@@ -16,16 +16,28 @@ limitations under the License.
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ThemeContext } from 'styled-components';
 import { Grid as GridBase } from '@devexpress/dx-react-grid';
+import { deepMerge } from 'grommet/utils';
 import { Root } from '../templates/layout';
+import { defaultTheme } from '../grommet/dx-theme';
 
 export const Grid = ({ children, ...props }) => (
-  <GridBase
-    rootComponent={Root}
-    {...props}
-  >
-    {children}
-  </GridBase>
+  <ThemeContext.Consumer>
+    {(theme) => {
+      const extTheme = deepMerge(defaultTheme, theme);
+      return (
+        <ThemeContext.Provider value={extTheme}>
+          <GridBase
+            rootComponent={Root}
+            {...props}
+          >
+            {children}
+          </GridBase>
+        </ThemeContext.Provider>
+      );
+    }}
+  </ThemeContext.Consumer>
 );
 
 Grid.Root = Root;

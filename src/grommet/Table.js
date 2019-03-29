@@ -15,10 +15,9 @@ limitations under the License.
 */
 
 import React from 'react';
-import styled, { ThemeContext } from 'styled-components';
-import { deepMerge, normalizeColor } from 'grommet/utils';
+import styled from 'styled-components';
+import { normalizeColor } from 'grommet/utils';
 import { genericStyles } from 'grommet/utils/styles';
-import { defaultTheme } from './dx-theme';
 
 const StyledTable = styled.table`
   width: 100%;
@@ -46,22 +45,11 @@ const StyledTable = styled.table`
 class TableClass extends React.Component {
   render() {
     const { tableRef, ...rest } = this.props;
-
     return (
-      <ThemeContext.Consumer>
-        {(theme) => {
-          const extTheme = deepMerge(defaultTheme, theme);
-          return (
-            <ThemeContext.Provider value={extTheme}>
-              <StyledTable
-                ref={tableRef}
-                theme={extTheme}
-                {...rest}
-              />
-            </ThemeContext.Provider>
-          );
-        }}
-      </ThemeContext.Consumer>
+      <StyledTable
+        ref={tableRef}
+        {...rest}
+      />
     );
   }
 }

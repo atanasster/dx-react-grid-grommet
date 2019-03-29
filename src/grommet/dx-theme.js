@@ -103,5 +103,10 @@ export const defaultTheme = {
     'row-select': undefined,
     'row-stub': undefined,
     'row-summary': undefined,
+    'column-chooser': {
+      extend: css`
+        z-index: 9;
+      `,
+    },
   },
 };

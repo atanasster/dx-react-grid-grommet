@@ -16,12 +16,18 @@ limitations under the License.
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { Drop } from 'grommet';
+
+const StyledDrop = styled(Drop)`
+  ${props => console.log(props.theme)}
+  ${props => props.theme.dxgrid && props.theme.dxgrid['column-chooser'] && props.theme.dxgrid['column-chooser'].extend};
+`;
 
 export const Overlay = ({
   visible, onHide, children, target, ...restProps
 }) => visible && (
-<Drop
+<StyledDrop
   open={visible}
   target={target}
   onClickOutside={onHide}
@@ -30,7 +36,7 @@ export const Overlay = ({
   {...restProps}
 >
   {children}
-</Drop>
+</StyledDrop>
 );
 
 Overlay.propTypes = {

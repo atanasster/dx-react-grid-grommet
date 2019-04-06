@@ -1,6 +1,6 @@
 {
   "name": "dx-react-grid-grommet",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -16,8 +16,8 @@
     "devextreme-reactive",
     "dx-react-grid"
   ],
-  "homepage": "https://grommet-nextjs.herokuapp.com/dx-grid",
-  "bugs": "https://github.com/atanasster/grommet-controls/issues",
+  "homepage": "http://grommet-nextjs.herokuapp.com/templates/dx-grid",
+  "bugs": "https://github.com/atanasster/dx-react-grid-grommet/issues",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",

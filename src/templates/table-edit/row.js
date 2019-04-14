@@ -31,7 +31,7 @@ export const TableEditRow = ({
         if (ref) {
           let items = findDOMNode(ref).getElementsByTagName('*');
           items = filterByFocusable(items);
-          const focusables = items.filter(item => item.localName !== 'button');
+          const focusables = items.filter(item => ['button', 'a'].indexOf(item.localName) === -1);
           if (focusables.length > 0) {
             setTimeout(() => {
               focusables[0].focus();

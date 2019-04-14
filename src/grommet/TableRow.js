@@ -23,16 +23,21 @@ const StyledTableRow = styled.tr`
   ${props => props.tableContextTheme && props.tableContextTheme.extend}
 `;
 
-export const TableRow = withTheme(({ theme, tableContext, ...props }) => {
-  const tableContextTheme = (theme && theme.dxgrid && theme.dxgrid[tableContext]) || {};
-  return (
-    <StyledTableRow
-      tableContextTheme={tableContextTheme}
-      theme={theme}
-      {...props}
-    />
-  );
-});
+class TableRowClass extends React.Component {
+  render() {
+    const { theme, tableContext, ...props } = this.props;
+    const tableContextTheme = (theme && theme.dxgrid && theme.dxgrid[tableContext]) || {};
+    return (
+      <StyledTableRow
+        tableContextTheme={tableContextTheme}
+        theme={theme}
+        {...props}
+      />
+    );
+  }
+}
+
+export const TableRow = withTheme(TableRowClass);
 
 TableRow.defaultProps = {
   tableContext: 'row',
@@ -42,3 +47,4 @@ TableRow.defaultProps = {
 TableRow.propTypes = {
   tableContext: PropTypes.string,
 };
+

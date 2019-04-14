@@ -16,6 +16,8 @@ limitations under the License.
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { findDOMNode } from 'react-dom';
+import { filterByFocusable } from 'grommet/utils/DOM';
 import { TableRow as GrommetTableRow } from '../../grommet/TableRow';
 
 export const TableEditRow = ({
@@ -25,6 +27,18 @@ export const TableEditRow = ({
 }) => (
   <GrommetTableRow
     tableContext='row-edit'
+    ref={(ref) => {
+        if (ref) {
+          let items = findDOMNode(ref).getElementsByTagName('*');
+          items = filterByFocusable(items);
+          const focusables = items.filter(item => item.localName !== 'button');
+          if (focusables.length > 0) {
+            setTimeout(() => {
+              focusables[0].focus();
+            }, 0);
+          }
+        }
+      }}
     {...rest}
   >
     {children}

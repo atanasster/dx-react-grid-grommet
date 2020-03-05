@@ -21,25 +21,41 @@ import { TableCell } from '../../grommet/TableCell';
 
 export const EditCell = ({
   column, value, onValueChange, style, children,
-  row, tableRow, tableColumn, editingEnabled, ...restProps
-}) => (
-  <TableCell
-    tableContext='cell-edit'
-    align={tableColumn && tableColumn.align}
-    style={style}
-    {...restProps}
-  >
-    {children || (
-    <TextInput
-      plain={true}
-      focusIndicator={true}
-      value={value || ''}
-      disabled={!editingEnabled}
-      onChange={e => onValueChange(e.target.value)}
-    />
+  row, tableRow, tableColumn, editingEnabled,
+  autoFocus, onBlur, onFocus, onKeyDown, ...restProps
+}) => {
+  const patchedChildren = children
+    ? React.cloneElement(children, {
+      autoFocus,
+      onBlur,
+      onFocus,
+      onKeyDown,
+    })
+    : children;
+
+  return (
+    <TableCell
+      tableContext='cell-edit'
+      align={tableColumn && tableColumn.align}
+      style={style}
+      {...restProps}
+    >
+      {patchedChildren || (
+        <TextInput
+          plain={true}
+          focusIndicator={true}
+          value={(value === undefined || value === null) ? '' : value}
+          disabled={!editingEnabled}
+          onChange={e => onValueChange(e.target.value)}
+          autoFocus={autoFocus}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          onKeyDown={onKeyDown}
+        />
       )}
-  </TableCell>
-);
+    </TableCell>
+  );
+};
 
 EditCell.propTypes = {
   column: PropTypes.object,
@@ -51,6 +67,10 @@ EditCell.propTypes = {
   style: PropTypes.object,
   editingEnabled: PropTypes.bool,
   children: PropTypes.node,
+  autoFocus: PropTypes.bool,
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
+  onKeyDown: PropTypes.func,
 };
 
 EditCell.defaultProps = {
@@ -62,4 +82,8 @@ EditCell.defaultProps = {
   style: null,
   children: undefined,
   editingEnabled: true,
+  autoFocus: false,
+  onBlur: () => {},
+  onFocus: () => {},
+  onKeyDown: () => {},
 };

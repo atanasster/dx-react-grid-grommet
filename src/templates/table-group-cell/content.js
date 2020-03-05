@@ -31,7 +31,7 @@ export const Content = ({
   >
     <strong>
       {column.title || column.name}
-        :
+      :
       {' '}
     </strong>
     {children || String(row.value)}

@@ -20,30 +20,40 @@ import { findDOMNode } from 'react-dom';
 import { filterByFocusable } from 'grommet/utils/DOM';
 import { TableRow as GrommetTableRow } from '../../grommet/TableRow';
 
-export const TableEditRow = ({
-  children,
-  row, tableRow,
-  ...rest
-}) => (
-  <GrommetTableRow
-    tableContext='row-edit'
-    ref={(ref) => {
-        if (ref) {
-          let items = findDOMNode(ref).getElementsByTagName('*');
-          items = filterByFocusable(items);
-          const focusables = items.filter(item => (['button', 'a'].indexOf(item.localName) === -1 && !item.disabled));
-          if (focusables.length > 0) {
-            setTimeout(() => {
-              focusables[0].focus();
-            }, 0);
-          }
+export class TableEditRow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.textInput = null;
+
+    this.focusFirstCell = (element) => {
+      // Focus the text input using the raw DOM API
+      if (element && this.textInput === null) {
+        this.textInput = element;
+        let items = findDOMNode(element).getElementsByTagName('*');
+        items = filterByFocusable(items);
+        const focusables = items.filter(item => (['button', 'a'].indexOf(item.localName) === -1 && !item.disabled));
+        if (focusables.length > 0) {
+          setTimeout(() => {
+            focusables[0].focus();
+          }, 0);
         }
-      }}
-    {...rest}
-  >
-    {children}
-  </GrommetTableRow>
-);
+      }
+    };
+  }
+
+  render() {
+    const { children, row, tableRow, ...rest } = this.props;
+    return (<GrommetTableRow
+      tableContext='row-edit'
+      ref={this.focusFirstCell}
+      {...rest}
+    >
+      {children}
+    </GrommetTableRow>
+    );
+  }
+}
+
 
 TableEditRow.propTypes = {
   children: PropTypes.node,

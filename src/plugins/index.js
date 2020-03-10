@@ -31,6 +31,7 @@ export * from './table-filter-row';
 export * from './table-fixed-columns';
 export * from './table-group-row';
 export * from './table-header-row';
+export * from './table-inline-cell-editing';
 export * from './table-row-detail';
 export * from './table-selection';
 export * from './table-summary-row';

@@ -1,6 +1,6 @@
 {
   "name": "dx-react-grid-grommet",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",

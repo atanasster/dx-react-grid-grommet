@@ -1,6 +1,6 @@
 {
   "name": "dx-react-grid-grommet",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
@@ -30,7 +30,7 @@
   "scripts": {
     "build": "webpack --mode production && babel ./src/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es6 babel ./src/ --ignore '__tests__' --out-dir ./dist/es6",
     "check": "./node_modules/.bin/eslint .",
-    "pub": "pushd ./ && npm run build && cd dist && npm publish && popd"
+    "pub": "cd ./ && npm run build && cd dist && npm publish && cd .."
   },
   "peerDependencies": {
     "@devexpress/dx-react-core": ">= 2.1.0",

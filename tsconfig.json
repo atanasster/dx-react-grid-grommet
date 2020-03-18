@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "jsx": "react",
+    "typeRoots": ["node_modules/@types/*", "src/types/**/*"]
+  },
+  "include": [
+    "src/"
+  ]
+}

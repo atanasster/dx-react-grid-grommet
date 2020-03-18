@@ -22,7 +22,7 @@ import { deepMerge } from 'grommet/utils';
 import { Root } from '../templates/layout';
 import { defaultTheme } from '../grommet/dx-theme';
 
-export const Grid = ({ children, ...props }) => (
+export const Grid = ({ children, rows, columns, ...props }) => (
   <ThemeContext.Consumer>
     {(theme) => {
       const extTheme = deepMerge(defaultTheme, theme);
@@ -30,6 +30,8 @@ export const Grid = ({ children, ...props }) => (
         <ThemeContext.Provider value={extTheme}>
           <GridBase
             rootComponent={Root}
+            rows={rows}
+            columns={columns}
             {...props}
           >
             {children}

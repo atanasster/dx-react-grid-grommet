@@ -4,6 +4,7 @@
   "main": "index.js",
   "module": "es6/index.js",
   "jsnext:main": "es6/index.js",
+  "types": "index.d.ts",
   "description": "react grommet v2 theme for developer express dx-grid react",
   "sideEffects": false,
   "authors": [
@@ -28,7 +29,7 @@
     "node": ">= 6.11.5"
   },
   "scripts": {
-    "build": "webpack --mode production && babel ./src/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es6 babel ./src/ --ignore '__tests__' --out-dir ./dist/es6",
+    "build": "webpack --mode production && babel ./src/ --ignore '__tests__' --out-dir ./dist && cross-env BABEL_ENV=es6 babel ./src/ --ignore '__tests__' --out-dir ./dist/es6 && cp ./index.d.ts ./dist",
     "check": "./node_modules/.bin/eslint .",
     "pub": "cd ./ && npm run build && cd dist && npm publish && cd .."
   },
@@ -39,19 +40,20 @@
     "grommet-icons": ">= 4.1.0",
     "react": ">= 16.7.0",
     "react-dom": ">= 16.7.0",
-    "styled-components": ">= 4.1.3"
+    "styled-components": ">= 5.0.1"
   },
   "dependencies": {
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
-    "@devexpress/dx-react-core": "^2.1.0",
-    "@devexpress/dx-react-grid": "^2.1.0",
+    "@devexpress/dx-react-core": "^2.5.1",
+    "@devexpress/dx-react-grid": "^2.5.1",
+    "@types/react": "^16.7.0",
     "babel-cli": "^6.22.2",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
-    "babel-plugin-styled-components": "^1.6.4",
+    "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.16.0",
@@ -74,7 +76,7 @@
     "react": "^16.7.0",
     "react-dev-utils": "^7.0.0",
     "react-dom": "^16.7.0",
-    "styled-components": "^4.1.3",
+    "styled-components": "^5.0.1",
     "tarball-extract": "^0.0.6",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.0.7"
